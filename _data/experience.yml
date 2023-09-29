@@ -1,6 +1,6 @@
 # Jobs
 # Software Engineer Intern
-- company: Springfield International Human Rights Outreach
+- company: Arçelik Global
   position: Software Engineer Intern
   duration: Jul 2023 &mdash; Aug 2023
   summary: <ul class="resume-item-list"><li> Automated a previously 15-minute manual process of creation of dishwasher software from excel file, cutting it down to a 1-minute automated process by developing a desktop app using Python’s Tkinter library</li><li>Reduced header file creation time by 97% from 3 minutes to 5 seconds by optimizing queries to database and integrating functionality of an existing app</li><li>Reduced the total automated time by 50% from 2 minutes to 1 minute by creating multiple threads</li></ul>
