@@ -1,12 +1,16 @@
 # Skills
 # Organizational leadership
-- skill: Organizational leadership
-  description: I have several years of experience leading organziations from community groups to business departments. From public speaking, to mentoring, to coordination of people and events, I can lead in any context.
+- skill: Programming Languages
+  description: C/C++, Python, JavaScript, C#, Haskell, Prolog, Verilog
 
-# Communications strategy
-- skill: Communications strategy
-  description: Content and marketing strategy,
+# Frameworks
+- skill: Frameworks
+  description: Django, Flask, React, Material-UI, Windows Forms
 
-# Digital content development and creation
-- skill: Digital content development and creation
-  description: Copy writing, graphic design, web design, front-end web development, print design
+# Developer Tools
+- skill: Developoer Tools
+  description: Git, Docker, VS Code, Visual Studio, PyCharm
+
+# Languages
+- skill: Languages
+  description: English(Fluent), Russian(Fluent), Kyrgyz(Native), Turkish(Intermediate), Spanish(Beginner)
