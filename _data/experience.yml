@@ -1,19 +1,7 @@
 # Jobs
-# VP of Global Communications
+# Software Engineer Intern
 - company: Springfield International Human Rights Outreach
-  position: VP of Global Communications
-  duration: Oct, 2013 &mdash; Present
-  summary: Write about your core competencies in one or two sentences describing your position. If you held the position for a long time, it could be a longer section, including a couple bullet points	<ul class="resume-item-list"><li>A project you are proud of</li><li>Another awesome project</li><li>or a team or department you worked with</li></ul>
+  position: Software Engineer Intern
+  duration: Jul 2023 &mdash; Aug 2023
+  summary: <ul class="resume-item-list"><li> Automated a previously 15-minute manual process of creation of dishwasher software from excel file, cutting it down to a 1-minute automated process by developing a desktop app using Python’s Tkinter library</li><li>Reduced header file creation time by 97% from 3 minutes to 5 seconds by optimizing queries to database and integrating functionality of an existing app</li><li>Reduced the total automated time by 50% from 2 minutes to 1 minute by creating multiple threads</li></ul>
 
-# Director of Digital Stratgy
-- company: United Nations Human Rights Council
-  position: Director of Digital Strategy
-  duration:  Jun, 2010 &mdash; Sept, 2013
-  summary: If your stint was shorter, feel free to be brief and just call out the most meaningful points of your role. Be concise, and be meaninful. The person reading just needs enough to want to talk to you more about your experience.
-
-
-# Communications Coordinator
-- company: Springfield Women & Children's Center
-  position: Communications Coordinator
-  duration:   Jun, 2008  &mdash; May, 2010
-  summary: Led communication efforts across digital and traditional media channels for marketing and public relations, internal communication strategies, and coordinated support programs for the recipients of the center's services.
