@@ -11,19 +11,19 @@ sass:
 # Resume settings
 resume_avatar:                  "true"
 resume_name:                    "Akbar Tokochev"
-resume_title:                   "Computer Science Student"
+resume_title:                   "Computer Engineering Student"
 
 # used for the contact button in _layouts/resume.html
 resume_contact_email:           "atokochev@gmail.com"
 
 # the next two items are used for schema itemprops in _layouts/resume.html
-resume_contact_telephone:       "+1-(587)-335-0146"
-resume_contact_address:         "Edmonton, Canada"
+resume_contact_telephone:       ""
+resume_contact_address:         ""
 
-resume_header_contact_info:     "Edmonton, Canada • +1-(587)-335-0146 • atokochev@gmail.com"
+resume_header_contact_info:     ""
 display_header_contact_info:    "false"
 
-resume_header_intro: "<p>Hi, my name's Akbar and I'm currently an exchange student at the University of Alberta in Canada!</p>"
+resume_header_intro: "<p>Hi, my name's Akbar and I've recenlty completed my exchange studies at the University of Alberta in Canada!</p>"
 
 # use "yes" to display the email contact button,
 # "no" to display an "I'm not looking for work" message,
