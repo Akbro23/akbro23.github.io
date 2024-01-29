@@ -1,11 +1,11 @@
 # Skills
-# Organizational leadership
+# Programming Languages
 - skill: Programming Languages
   description: C/C++, Python, JavaScript, C#, Matlab, Assembly, Haskell, Prolog, Verilog
 
 # Frameworks
 - skill: Frameworks
-  description: Django, Flask, React, Material-UI, Windows Forms
+  description: Django, Flask, React, Bootstrap, Windows Forms
 
 # Developer Tools
 - skill: Developer Tools
