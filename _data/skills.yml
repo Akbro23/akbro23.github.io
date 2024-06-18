@@ -1,11 +1,15 @@
 # Skills
 # Programming Languages
 - skill: Programming Languages
-  description: C/C++, Python, JavaScript, C#, Matlab, Assembly, Haskell, Prolog, Verilog
+  description: C/C++, Python, Matlab, Assembly
 
 # Frameworks
 - skill: Frameworks
-  description: Django, Flask, React, Bootstrap, Windows Forms
+  description: Django, Flask, Bootstrap
+
+  # Database technologies
+- skill: Database technologies
+  description: PostgreSQL, SQLite, MongoDB
 
 # Developer Tools
 - skill: Developer Tools
