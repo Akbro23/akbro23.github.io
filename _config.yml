@@ -23,7 +23,7 @@ resume_contact_address:         ""
 resume_header_contact_info:     ""
 display_header_contact_info:    "false"
 
-resume_header_intro: "<p>Hi, my name's Akbar and I'm from Kyrgyzstan. I'm pursuing a Bachelor's degree in Computer Engineering at Middle East Technical University and I've recently completed my exchange studies at the University of Alberta in Canada. Last summer, I had the pleasure of interning at Arçelik's dishwasher plant in Ankara, where I gained valuable insights into automation, python development, and database query optimization. I'm currently looking for summer 2024 internship opportunities!</p>"
+resume_header_intro: "<p>Hi, my name's Akbar and I'm from Kyrgyzstan. I'm pursuing a Bachelor's degree in Computer Engineering at Middle East Technical University and also was an exchange student at the University of Alberta in Canada. Throughout my previous internships I gained experience in developing full-stack web applications using Django and automating boring tasks using Python. I'm currently looking for 2025 new grad opportunities!</p>"
 
 # use "yes" to display the email contact button,
 # "no" to display an "I'm not looking for work" message,
