@@ -11,7 +11,7 @@ export const siteConfig = {
   aboutMe:
     "I'm a recent Computer Engineering graduate from METU, curious and eager to learn new technologies and best practices. I want to grow and excel to be able to deliver high-quality software. If that sounds like a good match, feel free to reach out!",
   skills: ["Python", "C", "C++", "JavaScript", "Django", "NextJS", "React", "PyTorch", "SQL", "MongoDB", "Docker", "Git"],
-  // projects: [
+  projects: [
   //   {
   //     name: "AI Dev Roundup Newsletter",
   //     description:
@@ -33,7 +33,7 @@ export const siteConfig = {
   //     link: "https://extensionkit.io/?ref=devportfolio",
   //     skills: ["React", "Node.js", "AWS"],
   //   },
-  // ],
+  ],
   experience: [
     {
       company: "TechNarts",
