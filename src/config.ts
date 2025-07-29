@@ -43,6 +43,7 @@ export const siteConfig = {
         "Proposed and successfully adopted UV over PIP, reducing container build time by 37%",
         "Led migration of project to a new internal library, enabling code reuse and reducing development time",
         "Developed email notification system to alert users about task statuses",
+        "test",
       ],
     },
     {
