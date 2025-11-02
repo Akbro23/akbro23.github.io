@@ -8,7 +8,7 @@ const educationData = [
     href: "https://www.kit.edu/",
     degree: "MSc Computer Science",
     highlights: [],
-    date: "Oct 2025 - Sep 2027",
+    duration: "Oct 2025 - Sep 2027",
     location: "Karlsruhe, Germany",
   },
   {
@@ -19,7 +19,7 @@ const educationData = [
       "GPA: 3.62 / 4.00 (4.00 is the best)",
       "100% merit-based scholarship",
     ],
-    date: "Sep 2021 - Jun 2025",
+    duration: "Sep 2021 - Jun 2025",
     location: "Ankara, Turkey",
   },
   {
@@ -27,7 +27,7 @@ const educationData = [
     href: "https://www.ualberta.ca/",
     degree: "Exchange Program",
     highlights: ["GPA: 3.7 / 4.0 (4.0 is the best)"],
-    date: "Sep 2023 - Dec 2023",
+    duration: "Sep 2023 - Dec 2023",
     location: "Edmonton, Canada",
   },
 ];
@@ -38,7 +38,7 @@ export default function Education() {
       <Section>
         <div className="flex items-center justify-center gap-4 mx-auto">
           <GraduationCap className="w-10 h-10" />
-          <h2 className="font-bold text-4xl">Education</h2>
+          <h2 className="font-bold text-2xl lg:text-4xl">Education</h2>
         </div>
 
         <div className="mt-16 flex flex-col gap-12">
@@ -49,7 +49,7 @@ export default function Education() {
               href={edu.href}
               degree={edu.degree}
               highlights={edu.highlights}
-              date={edu.date}
+              duration={edu.duration}
               location={edu.location}
             />
           ))}
@@ -64,24 +64,24 @@ const EducationCard = ({
   href,
   degree,
   highlights,
-  date,
+  duration,
   location,
 }: {
   name: string;
   href: string;
   degree: string;
   highlights: string[];
-  date: string;
+  duration: string;
   location: string;
 }) => (
-  <div className="flex flex-col lg:flex-row justify-between">
+  <div className="flex flex-col lg:flex-row justify-between gap-2">
     <div>
       <Link href={href} target="_blank">
-        <h3 className="text-2xl font-semibold text-primary underline hover:no-underline transition">
+        <h3 className="text-xl lg:text-2xl font-semibold text-primary underline hover:no-underline transition">
           {name}
         </h3>
       </Link>
-      <p className="mt-2">{degree}</p>
+      <p className="mt-2 font-semibold">{degree}</p>
       <ul className="list-disc list-inside text-muted-foreground text-sm">
         {highlights.map((hi, index) => (
           <li key={index}>{hi}</li>
@@ -89,8 +89,8 @@ const EducationCard = ({
       </ul>
     </div>
     <div className="lg:text-right">
-      <p>{date}</p>
-      <p className="text-muted-foreground">{location}</p>
+      <p>{duration}</p>
+      <p className="text-sm text-muted-foreground">{location}</p>
     </div>
   </div>
 );
