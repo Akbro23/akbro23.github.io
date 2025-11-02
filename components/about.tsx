@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section id="about" className="py-32">
       <Section>
-        <h2 className="text-center font-bold text-4xl">About</h2>
+        <h2 className="text-center font-bold text-2xl lg:text-4xl">About</h2>
         <div className="mt-16">
           <p className="text-muted-foreground">
             I am a first-year Master&apos;s student in Computer Science at{" "}
