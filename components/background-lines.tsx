@@ -1,13 +1,9 @@
 export default function BackgroundLines() {
   return (
     <div className="absolute inset-0 pointer-events-none flex justify-between no-pad">
-      <div className="w-px h-full bg-white/5"></div>
-      <div className="w-px h-full bg-white/5"></div>
-      <div className="w-px h-full bg-white/5"></div>
-      <div className="w-px h-full bg-white/5"></div>
-      <div className="w-px h-full bg-white/5"></div>
-      <div className="w-px h-full bg-white/5"></div>
-      <div className="w-px h-full bg-white/5"></div>
+      {Array.from({ length: 7 }).map((_, idx) => (
+        <div key={idx} className="w-px h-full bg-border/30"></div>
+      ))}
     </div>
   );
 }
