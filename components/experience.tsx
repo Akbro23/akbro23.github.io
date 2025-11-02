@@ -11,13 +11,22 @@ const experienceData = [
         name: "Software Engineer",
         duration: "Nov 2024 - Oct 2025",
         location: "Ankara, Turkey",
-        highlights: ["Automated", "Developed", "Reduced"],
+        highlights: [
+          "Reduced Django app container build time by 37% by proposing and adopting UV package manager",
+          "Synchronized PostgreSQL with DGraph by utilizing Debezium and creating custom Kafka sink connector",
+          "Led migration of a project to a new internal library, enabling code reuse and reducing development time",
+          "Developed email notification system using Kafka and Django commands to alert about task statuses",
+        ],
       },
       {
         name: "Software Engineer Intern",
         duration: "Jul 2024 - Jul 2024",
         location: "Ankara, Turkey",
-        highlights: ["Automated", "Developed", "Reduced"],
+        highlights: [
+          "Developed Django app for personalized restaurant meal recommendations",
+          "Integrated recommendation model using Surprise library",
+          "Configured periodic model retraining using Celery",
+        ],
       },
     ],
   },
@@ -27,7 +36,11 @@ const experienceData = [
     positions: [
       {
         name: "Software Engineer Intern",
-        highlights: ["Automated", "Developed", "Reduced"],
+        highlights: [
+          "Automated manual dishwasher software process, reducing the time by 93% from 15 minutes to 1 minute, by developing Python GUI app",
+          "Optimized header generation app by 97% from 3 minutes to 5 seconds by reducing number of database calls",
+          "Developed new features for existing apps to make them automation friendly",
+        ],
         duration: "Jul 2023 - Aug 2023",
         location: "Ankara, Turkey",
       },
@@ -81,17 +94,17 @@ const ExperienceCard = ({
     {positions.map((position, index) => (
       <div
         key={index}
-        className="mt-2 flex flex-col lg:flex-row justify-between gap-1"
+        className="mt-2 flex flex-col lg:flex-row justify-between gap-1 lg:gap-8"
       >
         <div>
           <p className="font-semibold">{position.name}</p>
-          <ul className="list-disc list-inside text-muted-foreground text-sm">
+          <ul className="pl-4 list-disc text-muted-foreground text-sm space-y-1">
             {position.highlights.map((hi, index) => (
               <li key={index}>{hi}</li>
             ))}
           </ul>
         </div>
-        <div className="lg:text-right">
+        <div className="lg:text-right whitespace-nowrap">
           <p>{position.duration}</p>
           <p className="text-sm text-muted-foreground">{position.location}</p>
         </div>
