@@ -1,12 +1,14 @@
 import Hero from "@/components/hero";
 import BackgroundLines from "@/components/background-lines";
+import About from "@/components/about";
 
 
 export default function Home() {
   return (
-    <div className="relative mx-auto max-w-6xl shadow-lg bg-background">
+    <div className="relative mx-auto max-w-6xl shadow-lg bg-background divide-y">
       <BackgroundLines />
       <Hero />
+      <About />
     </div>
   );
 }
