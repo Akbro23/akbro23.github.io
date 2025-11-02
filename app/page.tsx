@@ -2,6 +2,7 @@ import Hero from "@/components/hero";
 import BackgroundLines from "@/components/background-lines";
 import About from "@/components/about";
 import Education from "@/components/education";
+import Experience from "@/components/experience";
 
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <About />
       <Education />
+      <Experience />
     </div>
   );
 }
