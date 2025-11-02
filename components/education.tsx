@@ -32,7 +32,7 @@ export default function Education() {
         <h2 className="text-center font-bold text-4xl">Education</h2>
         <div className="mt-16">
           <div className="flex flex-col gap-12">
-            {educationData.map((edu ) => (
+            {educationData.map((edu) => (
               <EducationCard
                 key={edu.name}
                 name={edu.name}
