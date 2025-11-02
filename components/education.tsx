@@ -82,7 +82,7 @@ const EducationCard = ({
         </h3>
       </Link>
       <p className="mt-2 font-semibold">{degree}</p>
-      <ul className="list-disc list-inside text-muted-foreground text-sm">
+      <ul className="pl-4 list-disc text-muted-foreground text-sm">
         {highlights.map((hi, index) => (
           <li key={index}>{hi}</li>
         ))}
