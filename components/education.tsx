@@ -74,7 +74,7 @@ const EducationCard = ({
   duration: string;
   location: string;
 }) => (
-  <div className="flex flex-col lg:flex-row justify-between gap-2">
+  <div className="flex flex-col lg:flex-row justify-between gap-1">
     <div>
       <Link href={href} target="_blank">
         <h3 className="text-xl lg:text-2xl font-semibold text-primary underline hover:no-underline transition">
