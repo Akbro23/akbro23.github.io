@@ -71,7 +71,7 @@ const EducationCard = ({
       </Link>
       <p className="mt-2">{degree}</p>
     </div>
-    <div>
+    <div className="lg:text-right">
       <p>{date}</p>
       <p className="text-muted-foreground">{location}</p>
     </div>
