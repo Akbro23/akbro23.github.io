@@ -23,7 +23,7 @@ const links = [
 export default function NavBar() {
   return (
     <div className="mt-2 fixed w-full z-20">
-      <div className="py-4 px-6 relative max-w-5xl mx-auto z-10 border rounded-2xl bg-background">
+      <div className="py-4 px-6 relative max-w-5xl mx-auto z-10 border rounded-2xl bg-background/50 backdrop-blur-lg">
         <div className="flex justify-between items-center">
           <div></div>
           <div className="flex gap-8 text-sm text-muted-foreground">
