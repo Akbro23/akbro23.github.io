@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <section id="about" className="py-16">
+    <section id="about" className="py-32">
       <Section>
         <h2 className="text-center font-bold text-4xl">About</h2>
         <div className="mt-16 grid grid-cols-10">
