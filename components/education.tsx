@@ -26,7 +26,7 @@ const educationData = [
     name: "University of Alberta",
     href: "https://www.ualberta.ca/",
     degree: "Exchange Program",
-    highlights: ["GPA: 3.7 / 4.0 (4.0 is the best)",],
+    highlights: ["GPA: 3.7 / 4.0 (4.0 is the best)"],
     date: "Sep 2023 - Dec 2023",
     location: "Edmonton, Canada",
   },
@@ -41,20 +41,18 @@ export default function Education() {
           <h2 className="font-bold text-4xl">Education</h2>
         </div>
 
-        <div className="mt-16">
-          <div className="flex flex-col gap-12">
-            {educationData.map((edu) => (
-              <EducationCard
-                key={edu.name}
-                name={edu.name}
-                href={edu.href}
-                degree={edu.degree}
-                highlights={edu.highlights}
-                date={edu.date}
-                location={edu.location}
-              />
-            ))}
-          </div>
+        <div className="mt-16 flex flex-col gap-12">
+          {educationData.map((edu) => (
+            <EducationCard
+              key={edu.name}
+              name={edu.name}
+              href={edu.href}
+              degree={edu.degree}
+              highlights={edu.highlights}
+              date={edu.date}
+              location={edu.location}
+            />
+          ))}
         </div>
       </Section>
     </section>
@@ -72,7 +70,7 @@ const EducationCard = ({
   name: string;
   href: string;
   degree: string;
-  highlights: string[],
+  highlights: string[];
   date: string;
   location: string;
 }) => (
