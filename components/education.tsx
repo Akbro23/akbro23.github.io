@@ -1,4 +1,5 @@
 import Section from "@/components/section";
+import { GraduationCap } from "lucide-react";
 import Link from "next/link";
 
 const educationData = [
@@ -29,7 +30,11 @@ export default function Education() {
   return (
     <section id="education" className="py-32">
       <Section>
-        <h2 className="text-center font-bold text-4xl">Education</h2>
+        <div className="flex items-center justify-center gap-4 mx-auto">
+          <GraduationCap className="w-10 h-10"/>
+          <h2 className="font-bold text-4xl">Education</h2>
+        </div>
+        
         <div className="mt-16">
           <div className="flex flex-col gap-12">
             {educationData.map((edu) => (
