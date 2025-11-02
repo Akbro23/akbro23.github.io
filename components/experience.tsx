@@ -81,10 +81,10 @@ const ExperienceCard = ({
     {positions.map((position, index) => (
       <div
         key={index}
-        className="mt-4 flex flex-col lg:flex-row justify-between gap-2"
+        className="mt-2 flex flex-col lg:flex-row justify-between gap-1"
       >
         <div>
-          <p>{position.name}</p>
+          <p className="font-semibold">{position.name}</p>
           <ul className="list-disc list-inside text-muted-foreground text-sm">
             {position.highlights.map((hi, index) => (
               <li key={index}>{hi}</li>
