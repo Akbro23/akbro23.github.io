@@ -4,14 +4,20 @@ import { Mail } from "lucide-react";
 
 export default function SocialLinks() {
   return (
-    <div className="relative grid grid-cols-4 bg-linear-to-br from-background-light to-background rounded-2xl *:py-6 *:lg:py-10 shadow border overflow-hidden *:hover:bg-background-light hover:shadow-lg transition *:transition">
+    <div className="relative grid grid-cols-4 bg-linear-to-br from-background-light to-background rounded-2xl *:py-4 *:lg:py-10 shadow border overflow-hidden *:hover:bg-background-light hover:shadow-lg transition *:transition">
       <Link href="https://github.com/Akbro23" target="_blank">
         <div className="relative w-8 h-8 mx-auto">
+          <Image
+            src="/github-logo.svg"
+            alt="GitHub"
+            fill
+            className="object-contain dark:hidden"
+          />
           <Image
             src="/github-logo-white.svg"
             alt="GitHub"
             fill
-            className="object-contain"
+            className="object-contain hidden dark:block"
           />
         </div>
       </Link>
