@@ -6,8 +6,8 @@ export default function About() {
     <section id="about" className="py-32">
       <Section>
         <h2 className="text-center font-bold text-4xl">About</h2>
-        <div className="mt-16 grid grid-cols-10">
-          <p className="col-span-8 col-start-2 text-muted-foreground">
+        <div className="mt-16">
+          <p className="text-muted-foreground">
             I am a first-year Master&apos;s student in Computer Science at{" "}
             <Link
               href="https://www.kit.edu/"

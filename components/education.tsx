@@ -6,8 +6,8 @@ export default function Education() {
     <section id="education" className="py-32">
       <Section>
         <h2 className="text-center font-bold text-4xl">Education</h2>
-        <div className="mt-16 grid grid-cols-10">
-          <div className="col-span-8 col-start-2 flex flex-col gap-12">
+        <div className="mt-16">
+          <div className="flex flex-col gap-12">
             <EducationCard
               name="Karlsruhe Institute of Technology"
               href="https://www.kit.edu/"
