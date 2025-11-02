@@ -3,7 +3,7 @@ import SocialLinks from "@/components/social-links";
 
 export default function Hero() {
   return (
-    <section id="hero" className="py-32 md:py-64 grid grid-cols-6">
+    <section id="hero" className="relative py-32 md:py-64 grid grid-cols-6">
       <div className="col-span-6 grid grid-cols-1 lg:grid-cols-2 gap-12 place-items-center">
         <div className="order-2 lg:order-1 flex flex-col items-center lg:items-start gap-y-6 px-8">
           <h1 className="tracking-tight text-6xl md:text-8xl font-bold text-center lg:text-left">
