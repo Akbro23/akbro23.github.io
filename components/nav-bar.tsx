@@ -11,7 +11,7 @@ const links = [
     name: "Skills",
   },
   {
-    href: "#",
+    href: "#education",
     name: "Education",
   },
   {

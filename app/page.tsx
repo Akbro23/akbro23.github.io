@@ -1,6 +1,7 @@
 import Hero from "@/components/hero";
 import BackgroundLines from "@/components/background-lines";
 import About from "@/components/about";
+import Education from "@/components/education";
 
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <BackgroundLines />
       <Hero />
       <About />
+      <Education />
     </div>
   );
 }
