@@ -56,7 +56,7 @@ export default function Experience() {
           <BriefcaseBusiness className="w-10 h-10" />
           <h2 className="font-bold text-2xl lg:text-4xl">Experience</h2>
         </div>
-        <div className="mt-16 flex flex-col gap-12">
+        <div className="mt-16 flex flex-col gap-16">
           {experienceData.map((exp, index) => (
             <ExperienceCard
               key={index}
@@ -91,19 +91,11 @@ const ExperienceCard = ({
         {company}
       </h3>
     </Link>
-    <div className="mt-4 flex flex-col gap-6">
+    <div className="mt-4 flex flex-col gap-8">
       {positions.map((position, index) => (
         <div key={index} className="flex flex-col gap-2 lg:gap-0">
-          <div className="flex flex-col lg:flex-row lg:justify-between gap-1 lg:gap-8">
-            <div className="flex flex-col gap-2">
-              <p className="font-semibold">{position.name}</p>
-              <ul className="pl-4 list-disc text-muted-foreground text-sm space-y-1 hidden lg:block">
-                {position.highlights.map((hi, i) => (
-                  <li key={i}>{hi}</li>
-                ))}
-              </ul>
-            </div>
-
+          <div className="flex flex-col lg:flex-row lg:justify-between gap-2">
+            <p className="font-semibold">{position.name}</p>
             <div className="lg:text-right whitespace-nowrap">
               <p>{position.duration}</p>
               <p className="text-sm text-muted-foreground">
@@ -111,7 +103,7 @@ const ExperienceCard = ({
               </p>
             </div>
           </div>
-          <ul className="pl-4 list-disc text-muted-foreground text-sm space-y-1 lg:hidden">
+          <ul className="pl-4 list-disc text-muted-foreground text-sm space-y-1 lg:w-3/4">
             {position.highlights.map((hi, i) => (
               <li key={i}>{hi}</li>
             ))}

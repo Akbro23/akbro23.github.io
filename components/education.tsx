@@ -86,7 +86,7 @@ const EducationCard = ({
         <p className="text-sm text-muted-foreground">{location}</p>
       </div>
     </div>
-    <ul className="pl-4 list-disc text-muted-foreground text-sm">
+    <ul className="pl-4 list-disc text-muted-foreground text-sm space-y-1">
       {highlights.map((hi, index) => (
         <li key={index}>{hi}</li>
       ))}
