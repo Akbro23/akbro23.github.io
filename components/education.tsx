@@ -15,10 +15,7 @@ const educationData = [
     name: "Middle East Technical University",
     href: "https://www.metu.edu.tr/",
     degree: "BSc Computer Engineering",
-    highlights: [
-      "GPA: 3.62 / 4.00 (4.00 is the best)",
-      "100% merit-based scholarship",
-    ],
+    highlights: ["GPA: 3.62 / 4.00", "100% merit-based scholarship"],
     duration: "Sep 2021 - Jun 2025",
     location: "Ankara, Turkey",
   },
@@ -26,7 +23,7 @@ const educationData = [
     name: "University of Alberta",
     href: "https://www.ualberta.ca/",
     degree: "Exchange Program",
-    highlights: ["GPA: 3.7 / 4.0 (4.0 is the best)"],
+    highlights: ["GPA: 3.7 / 4.0"],
     duration: "Sep 2023 - Dec 2023",
     location: "Edmonton, Canada",
   },
@@ -74,23 +71,25 @@ const EducationCard = ({
   duration: string;
   location: string;
 }) => (
-  <div className="flex flex-col lg:flex-row justify-between gap-1">
-    <div>
-      <Link href={href} target="_blank">
-        <h3 className="text-xl lg:text-2xl font-semibold text-primary underline hover:no-underline transition">
-          {name}
-        </h3>
-      </Link>
-      <p className="mt-2 font-semibold">{degree}</p>
-      <ul className="pl-4 list-disc text-muted-foreground text-sm">
-        {highlights.map((hi, index) => (
-          <li key={index}>{hi}</li>
-        ))}
-      </ul>
+  <div className="flex flex-col gap-2">
+    <div className="flex flex-col lg:flex-row lg:justify-between gap-1">
+      <div>
+        <Link href={href} target="_blank">
+          <h3 className="text-xl lg:text-2xl font-semibold text-primary underline hover:no-underline transition">
+            {name}
+          </h3>
+        </Link>
+        <p className="mt-2 font-semibold">{degree}</p>
+      </div>
+      <div className="lg:text-right">
+        <p>{duration}</p>
+        <p className="text-sm text-muted-foreground">{location}</p>
+      </div>
     </div>
-    <div className="lg:text-right">
-      <p>{duration}</p>
-      <p className="text-sm text-muted-foreground">{location}</p>
-    </div>
+    <ul className="pl-4 list-disc text-muted-foreground text-sm">
+      {highlights.map((hi, index) => (
+        <li key={index}>{hi}</li>
+      ))}
+    </ul>
   </div>
 );
