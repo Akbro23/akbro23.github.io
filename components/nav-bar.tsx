@@ -12,7 +12,7 @@ const links = [
     name: "About",
   },
   {
-    href: "#",
+    href: "#skills",
     name: "Skills",
   },
   {
