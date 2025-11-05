@@ -69,7 +69,7 @@ export default function Skills() {
             {filteredSkills?.map((skill, index) => (
               <div
                 key={index}
-                className="border border-primary bg-transparent rounded-lg py-2 text-center hover:bg-input dark:hover:border-input transition"
+                className="border border-primary bg-transparent rounded-lg py-2 text-center hover:bg-input dark:hover:border-input transition text-muted-foreground text-sm"
               >
                 {skill}
               </div>
