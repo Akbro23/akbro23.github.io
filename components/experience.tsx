@@ -91,24 +91,33 @@ const ExperienceCard = ({
         {company}
       </h3>
     </Link>
-    {positions.map((position, index) => (
-      <div
-        key={index}
-        className="mt-2 flex flex-col lg:flex-row justify-between gap-1 lg:gap-8"
-      >
-        <div>
-          <p className="font-semibold">{position.name}</p>
-          <ul className="pl-4 list-disc text-muted-foreground text-sm space-y-1">
-            {position.highlights.map((hi, index) => (
-              <li key={index}>{hi}</li>
+    <div className="mt-4 flex flex-col gap-6">
+      {positions.map((position, index) => (
+        <div key={index} className="flex flex-col gap-2 lg:gap-0">
+          <div className="flex flex-col lg:flex-row lg:justify-between gap-1 lg:gap-8">
+            <div className="flex flex-col gap-2">
+              <p className="font-semibold">{position.name}</p>
+              <ul className="pl-4 list-disc text-muted-foreground text-sm space-y-1 hidden lg:block">
+                {position.highlights.map((hi, i) => (
+                  <li key={i}>{hi}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="lg:text-right whitespace-nowrap">
+              <p>{position.duration}</p>
+              <p className="text-sm text-muted-foreground">
+                {position.location}
+              </p>
+            </div>
+          </div>
+          <ul className="pl-4 list-disc text-muted-foreground text-sm space-y-1 lg:hidden">
+            {position.highlights.map((hi, i) => (
+              <li key={i}>{hi}</li>
             ))}
           </ul>
         </div>
-        <div className="lg:text-right whitespace-nowrap">
-          <p>{position.duration}</p>
-          <p className="text-sm text-muted-foreground">{position.location}</p>
-        </div>
-      </div>
-    ))}
+      ))}
+    </div>
   </div>
 );
