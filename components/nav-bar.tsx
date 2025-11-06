@@ -44,7 +44,7 @@ export default function NavBar() {
           <ThemeToggle />
         </div>
         <div
-          className="lg:hidden flex flex-col gap-6"
+          className="relative lg:hidden flex flex-col gap-32 data-[state=active]:h-screen"
           data-state={isOpen ? "active" : "inactive"}
         >
           <div className="flex justify-end items-center gap-2">
@@ -55,7 +55,7 @@ export default function NavBar() {
             </Button>
           </div>
 
-          <div className="hidden in-data-[state=active]:flex flex-col gap-4 mx-auto w-fit py-4">
+          <div className="flex-1 hidden in-data-[state=active]:flex flex-col gap-8 w-fit mx-auto">
             {links.map((link) => (
               <Link
                 key={link.name}
