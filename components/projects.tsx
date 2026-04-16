@@ -70,27 +70,29 @@ const ProjectCard = ({
         </span>
       ))}
     </div>
-    <div className="mt-auto flex gap-4">
-      {project.demoUrl && (
-        <Link
-          href={project.demoUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="text-sm text-primary underline hover:no-underline transition"
-        >
-          Live Demo →
-        </Link>
-      )}
-      {project.githubUrl && (
-        <Link
-          href={project.githubUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="text-sm text-primary underline hover:no-underline transition"
-        >
-          GitHub →
-        </Link>
-      )}
-    </div>
+    {(project.demoUrl || project.githubUrl) && (
+      <div className="mt-auto flex gap-4">
+        {project.demoUrl && (
+          <Link
+            href={project.demoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-primary underline hover:no-underline transition"
+          >
+            Live Demo →
+          </Link>
+        )}
+        {project.githubUrl && (
+          <Link
+            href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-primary underline hover:no-underline transition"
+          >
+            GitHub →
+          </Link>
+        )}
+      </div>
+    )}
   </motion.div>
 );
