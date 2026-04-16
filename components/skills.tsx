@@ -7,9 +7,17 @@ import { useState } from "react";
 
 const categories = [
   {
-    name: "AI",
-    skills: ["PyTorch", "Scikit-Learn", "Numpy", "Pandas"],
+    name: "Languages",
+    skills: ["Python", "C", "C++", "JavaScript", "TypeScript", "Matlab"],
   },
+  {
+    name: "AI",
+    skills: ["LangChain", "PyTorch", "Scikit-Learn", "Numpy", "Pandas"],
+  },
+  // {
+    // name: "Robotics",
+    // skills: ["ROS2"],
+  // },
   {
     name: "Backend",
     skills: ["Django", "FastAPI", "Firebase", "Kafka"],
@@ -20,15 +28,11 @@ const categories = [
   },
   {
     name: "Database",
-    skills: ["PostgreSQL", "MongoDB", "Redis", "FireStore"],
+    skills: ["SQL", "PostgreSQL", "MongoDB", "Redis", "FireStore"],
   },
   {
     name: "DevOps",
-    skills: ["Git", "GitHub", "Docker"],
-  },
-  {
-    name: "Languages",
-    skills: ["Python", "JavaScript", "TypeScript", "C++", "C"],
+    skills: ["Linux", "Git", "GitHub", "Docker"],
   },
 ];
 
