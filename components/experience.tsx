@@ -12,10 +12,10 @@ const experienceData = [
         duration: "Nov 2024 - Oct 2025",
         location: "Ankara, Turkey",
         highlights: [
-          "Reduced Django app container build time by 37% by proposing and adopting UV package manager",
-          "Synchronized PostgreSQL with DGraph by utilizing Debezium and creating custom Kafka sink connector",
+          "Worked on network device management app across a stack of Django, React, Kafka, Redis, and Docker",
+          "Built an event-driven email notification system with Kafka and Django for real-time task status alerts",
           "Led migration of a project to a new internal library, enabling code reuse and reducing development time",
-          "Developed email notification system using Kafka and Django commands to alert about task statuses",
+          "Reduced Django app container build time by 37% by proposing and adopting UV package manager",
         ],
       },
       {
@@ -23,9 +23,9 @@ const experienceData = [
         duration: "Jul 2024 - Jul 2024",
         location: "Ankara, Turkey",
         highlights: [
-          "Developed Django app for personalized restaurant meal recommendations",
-          "Integrated recommendation model using Surprise library",
-          "Configured periodic model retraining using Celery",
+          "Built a Django app that lets users review restaurant meals and receive personalized recommendations",
+          "Automated model retraining with Celery and Redis to keep recommendations up to date with new reviews",
+          "Containerized all services using Docker Compose for a reproducible development environment",
         ],
       },
     ],
@@ -37,9 +37,9 @@ const experienceData = [
       {
         name: "Software Engineer Intern",
         highlights: [
-          "Automated manual dishwasher software process, reducing the time by 93% from 15 minutes to 1 minute, by developing Python GUI app",
-          "Optimized header generation app by 97% from 3 minutes to 5 seconds by reducing number of database calls",
-          "Developed new features for existing apps to make them automation friendly",
+          "Reduced a 10-minute manual workflow to a single click by building a Python GUI app",
+          "Eliminated manual data entry from Excel file using Robotic Process Automation",
+          "Identified and resolved excessive database calls in legacy code with a bulk query, achieving 97% faster runtime",
         ],
         duration: "Jul 2023 - Aug 2023",
         location: "Ankara, Turkey",
