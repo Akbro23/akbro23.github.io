@@ -54,7 +54,7 @@ const ProjectCard = ({
       ease: "easeInOut",
     }}
     viewport={{ once: true }}
-    className="w-full md:w-[calc(50%-8px)] bg-linear-to-br from-background-light to-background border rounded-xl p-6 flex flex-col gap-4"
+    className="w-full md:w-[calc(50%-8px)] bg-linear-to-br from-background-light to-background border border-primary-dark hover:border-primary rounded-xl p-6 flex flex-col gap-4 shadow-sm hover:shadow-lg transition"
   >
     <div>
       <h3 className="font-semibold text-lg">{project.name}</h3>
@@ -64,7 +64,7 @@ const ProjectCard = ({
       {project.techStack.map((tech, i) => (
         <span
           key={i}
-          className="text-xs border rounded px-2 py-1 text-muted-foreground"
+          className="text-xs border rounded px-2 py-1 text-muted-foreground hover:bg-input hover:border-primary-dark transition"
         >
           {tech}
         </span>
