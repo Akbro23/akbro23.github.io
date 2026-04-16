@@ -3,7 +3,15 @@ import { LayoutGrid } from "lucide-react";
 import Link from "next/link";
 import * as motion from "motion/react-client";
 
-const projectsData = [
+type Project = {
+  name: string;
+  description: string;
+  techStack: string[];
+  demoUrl?: string;
+  githubUrl?: string;
+};
+
+const projectsData: Project[] = [
   {
     name: "AI Flashcards",
     description: "AI-powered flashcards to help with your studies",
@@ -34,13 +42,7 @@ const ProjectCard = ({
   project,
   index,
 }: {
-  project: {
-    name: string;
-    description: string;
-    techStack: string[];
-    demoUrl?: string;
-    githubUrl?: string;
-  };
+  project: Project;
   index: number;
 }) => (
   <motion.div
@@ -73,6 +75,7 @@ const ProjectCard = ({
         <Link
           href={project.demoUrl}
           target="_blank"
+          rel="noreferrer"
           className="text-sm text-primary underline hover:no-underline transition"
         >
           Live Demo →
@@ -82,6 +85,7 @@ const ProjectCard = ({
         <Link
           href={project.githubUrl}
           target="_blank"
+          rel="noreferrer"
           className="text-sm text-primary underline hover:no-underline transition"
         >
           GitHub →
