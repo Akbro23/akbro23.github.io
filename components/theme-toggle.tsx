@@ -1,15 +1,16 @@
 "use client";
 
-import { SunMoon } from "lucide-react";
+import { Icon } from "@iconify/react";
+import sunIcon from "@iconify-icons/basil/sun-outline";
+import moonIcon from "@iconify-icons/basil/moon-outline";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
-  const isDark = theme === "dark";
+  const { resolvedTheme, setTheme } = useTheme();
 
   const toggleTheme = () => {
-    setTheme(isDark ? "light" : "dark");
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
   return (
@@ -19,7 +20,9 @@ export function ThemeToggle() {
       onClick={toggleTheme}
       aria-label="Toggle theme"
     >
-      <SunMoon />
+      {/* Display is driven by the .dark class, so there is no hydration flash. */}
+      <Icon icon={sunIcon} className="size-5 dark:hidden" />
+      <Icon icon={moonIcon} className="hidden size-5 dark:block" />
     </Button>
   );
 }

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Geist, Geist_Mono, Montserrat } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/nav-bar";
+import Footer from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,11 +15,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const montserrat = Montserrat({});
-
 export const metadata: Metadata = {
-  title: "Akbar Tokochev",
-  description: "Akbar Tokochev - Software Engineer",
+  title: "Akbar Tokochev — Software Engineer",
+  description:
+    "Akbar Tokochev. Software engineer working across AI, robotics, and full-stack systems. MSc Computer Science at KIT.",
 };
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${montserrat.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -39,6 +39,7 @@ export default function RootLayout({
         >
           <NavBar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

@@ -1,5 +1,5 @@
 import Hero from "@/components/hero";
-import BackgroundLines from "@/components/background-lines";
+import TechBackground from "@/components/tech-background";
 import About from "@/components/about";
 import Education from "@/components/education";
 import Experience from "@/components/experience";
@@ -8,14 +8,16 @@ import Projects from "@/components/projects";
 
 export default function Home() {
   return (
-    <div className="relative mx-auto max-w-6xl shadow-lg bg-background divide-y">
-      <BackgroundLines />
-      <Hero />
-      <About />
-      <Skills />
-      <Education />
-      <Experience />
-      <Projects />
-    </div>
+    <>
+      <TechBackground />
+      <main className="relative mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Hero />
+        <About />
+        <Projects />
+        <Skills />
+        <Education />
+        <Experience />
+      </main>
+    </>
   );
 }
