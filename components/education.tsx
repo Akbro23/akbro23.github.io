@@ -1,6 +1,9 @@
-import Section from "@/components/section";
-import { GraduationCap } from "lucide-react";
+import Section, { SectionHeading } from "@/components/section";
+import universityIcon from "@iconify-icons/basil/university-outline";
 import Link from "next/link";
+import * as motion from "motion/react-client";
+
+const ease = [0.16, 1, 0.3, 1] as const;
 
 const educationData = [
   {
@@ -31,65 +34,65 @@ const educationData = [
 
 export default function Education() {
   return (
-    <section id="education" className="py-32">
-      <Section>
-        <div className="flex items-center justify-center gap-4 mx-auto">
-          <GraduationCap className="w-10 h-10" />
-          <h2 className="font-bold text-2xl lg:text-4xl">Education</h2>
-        </div>
+    <Section id="education">
+      <SectionHeading icon={universityIcon} title="Education" />
 
-        <div className="mt-16 flex flex-col gap-12">
-          {educationData.map((edu) => (
-            <EducationCard
+      <div className="relative mt-10">
+        {/* Timeline rail */}
+        <div className="absolute bottom-3 left-[8px] top-3 w-px bg-border" />
+
+        <div className="flex flex-col gap-5">
+          {educationData.map((edu, index) => (
+            <motion.div
               key={edu.name}
-              name={edu.name}
-              href={edu.href}
-              degree={edu.degree}
-              highlights={edu.highlights}
-              duration={edu.duration}
-              location={edu.location}
-            />
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.55, ease, delay: index * 0.08 }}
+              className="relative pl-9 sm:pl-12"
+            >
+              {/* Node */}
+              <span
+                className={
+                  "absolute left-0 top-6 size-[17px] rounded-full border-2 " +
+                  (index === 0
+                    ? "border-primary bg-primary"
+                    : "border-primary bg-background-dark")
+                }
+              />
+
+              <div className="glass glass-hover rounded-2xl p-5 sm:p-6">
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+                  <div>
+                    <Link href={edu.href} target="_blank" rel="noopener noreferrer">
+                      <h3 className="text-lg font-semibold tracking-tight transition-colors hover:text-primary sm:text-xl">
+                        {edu.name}
+                      </h3>
+                    </Link>
+                    <p className="mt-1 text-muted-foreground">{edu.degree}</p>
+                  </div>
+                  <div className="shrink-0 sm:text-right">
+                    <p className="meta">{edu.duration}</p>
+                    <p className="meta mt-0.5">{edu.location}</p>
+                  </div>
+                </div>
+                {edu.highlights.length > 0 && (
+                  <ul className="mt-3 flex flex-wrap gap-2">
+                    {edu.highlights.map((hi) => (
+                      <li
+                        key={hi}
+                        className="rounded-md border border-border bg-background-light/50 px-2.5 py-1 font-mono text-xs text-muted-foreground"
+                      >
+                        {hi}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </motion.div>
           ))}
         </div>
-      </Section>
-    </section>
+      </div>
+    </Section>
   );
 }
-
-const EducationCard = ({
-  name,
-  href,
-  degree,
-  highlights,
-  duration,
-  location,
-}: {
-  name: string;
-  href: string;
-  degree: string;
-  highlights: string[];
-  duration: string;
-  location: string;
-}) => (
-  <div className="flex flex-col gap-2">
-    <div className="flex flex-col lg:flex-row lg:justify-between gap-1">
-      <div>
-        <Link href={href} target="_blank">
-          <h3 className="text-xl lg:text-2xl font-semibold text-primary underline hover:no-underline transition">
-            {name}
-          </h3>
-        </Link>
-        <p className="mt-2 font-semibold">{degree}</p>
-      </div>
-      <div className="lg:text-right">
-        <p>{duration}</p>
-        <p className="text-sm text-muted-foreground">{location}</p>
-      </div>
-    </div>
-    <ul className="pl-4 list-disc text-muted-foreground text-sm space-y-1">
-      {highlights.map((hi, index) => (
-        <li key={index}>{hi}</li>
-      ))}
-    </ul>
-  </div>
-);

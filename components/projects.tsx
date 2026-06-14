@@ -1,7 +1,11 @@
-import Section from "@/components/section";
-import { LayoutGrid } from "lucide-react";
-import Link from "next/link";
-import * as motion from "motion/react-client";
+import Section, { SectionHeading } from '@/components/section';
+import { Icon } from '@iconify/react';
+import appsIcon from '@iconify-icons/basil/apps-outline';
+import arrowUpIcon from '@iconify-icons/basil/arrow-up-outline';
+import Link from 'next/link';
+import * as motion from 'motion/react-client';
+
+const ease = [0.16, 1, 0.3, 1] as const;
 
 type Project = {
   name: string;
@@ -9,90 +13,116 @@ type Project = {
   techStack: string[];
   demoUrl?: string;
   githubUrl?: string;
+  video?: string;
+  poster?: string;
 };
 
 const projectsData: Project[] = [
   {
-    name: "AI Flashcards",
-    description: "AI-powered flashcards to help with your studies",
-    techStack: ["FastAPI", "LangChain", "Next.js"],
-    demoUrl: "https://akbro23.github.io/ai-flashcards-frontend/",
+    name: 'LIPM Walking Visualizer',
+    description:
+      'Interactive 3D visualizer of the Linear Inverted Pendulum Model for humanoid robot walking pattern generation.',
+    techStack: ['Next.js', 'Three.js', 'TypeScript'],
+    demoUrl: 'https://lipm-visualization.vercel.app/',
+    video: '/projects/lipm.mp4',
   },
 ];
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-32">
-      <Section>
-        <div className="flex items-center justify-center gap-4 mx-auto">
-          <LayoutGrid className="w-10 h-10" />
-          <h2 className="font-bold text-2xl lg:text-4xl">Projects</h2>
-        </div>
-        <div className="mt-16 flex flex-wrap justify-center gap-4">
-          {projectsData.map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
-          ))}
-        </div>
-      </Section>
-    </section>
+    <Section id="projects">
+      <SectionHeading
+        icon={appsIcon}
+        title="Projects"
+      />
+
+      <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2">
+        {projectsData.map((project, index) => (
+          <ProjectCard
+            key={project.name}
+            project={project}
+            index={index}
+          />
+        ))}
+      </div>
+    </Section>
   );
 }
 
-const ProjectCard = ({
-  project,
-  index,
-}: {
-  project: Project;
-  index: number;
-}) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{
-      delay: index * 0.1,
-      duration: 0.7,
-      ease: "easeInOut",
-    }}
-    viewport={{ once: true }}
-    className="w-full md:w-[calc(50%-8px)] bg-linear-to-br from-background-light to-background border border-primary-dark hover:border-primary rounded-xl p-6 flex flex-col gap-4 shadow-sm hover:shadow-lg transition"
-  >
-    <div>
-      <h3 className="font-semibold text-lg">{project.name}</h3>
-      <p className="text-muted-foreground text-sm mt-1">{project.description}</p>
-    </div>
-    <div className="flex flex-wrap gap-2">
-      {project.techStack.map((tech, i) => (
-        <span
-          key={i}
-          className="text-xs border rounded px-2 py-1 text-muted-foreground hover:bg-input hover:border-primary-dark transition"
-        >
-          {tech}
-        </span>
-      ))}
-    </div>
-    {(project.demoUrl || project.githubUrl) && (
-      <div className="mt-auto flex gap-4">
-        {project.demoUrl && (
-          <Link
-            href={project.demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-primary underline hover:no-underline transition"
-          >
-            Live Demo →
-          </Link>
-        )}
-        {project.githubUrl && (
-          <Link
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-primary underline hover:no-underline transition"
-          >
-            GitHub →
-          </Link>
-        )}
+function ProjectCard({ project, index }: { project: Project; index: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5, ease, delay: index * 0.08 }}
+      className="glass glass-hover flex flex-col gap-4 rounded-2xl p-6"
+    >
+      {project.video && (
+        <div className="aspect-video w-full overflow-hidden rounded-xl border border-border bg-background-dark">
+          <video
+            src={project.video}
+            poster={project.poster}
+            className="size-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+          />
+        </div>
+      )}
+
+      <div>
+        <h3 className="text-lg font-semibold tracking-tight">{project.name}</h3>
+        <p className="mt-1.5 text-sm text-muted-foreground">
+          {project.description}
+        </p>
       </div>
-    )}
-  </motion.div>
-);
+
+      <div className="flex flex-wrap gap-2">
+        {project.techStack.map((tech) => (
+          <span
+            key={tech}
+            className="rounded-md border border-border bg-background-light/50 px-2 py-1 font-mono text-xs text-muted-foreground"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+
+      {(project.demoUrl || project.githubUrl) && (
+        <div className="mt-auto flex flex-wrap gap-4 pt-2">
+          {project.demoUrl && (
+            <Link
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1 text-sm text-primary transition-colors hover:text-primary-light"
+            >
+              Live Demo
+              <Icon
+                icon={arrowUpIcon}
+                className="size-4 rotate-45 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+            </Link>
+          )}
+          {project.githubUrl && (
+            <Link
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1 text-sm text-primary transition-colors hover:text-primary-light"
+            >
+              GitHub
+              <Icon
+                icon={arrowUpIcon}
+                className="size-4 rotate-45 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+            </Link>
+          )}
+        </div>
+      )}
+    </motion.div>
+  );
+}

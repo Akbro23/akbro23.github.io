@@ -1,6 +1,9 @@
-import Section from "@/components/section";
-import { BriefcaseBusiness } from "lucide-react";
+import Section, { SectionHeading } from "@/components/section";
+import bagIcon from "@iconify-icons/basil/bag-outline";
 import Link from "next/link";
+import * as motion from "motion/react-client";
+
+const ease = [0.16, 1, 0.3, 1] as const;
 
 const experienceData = [
   {
@@ -12,10 +15,11 @@ const experienceData = [
         duration: "Nov 2024 - Oct 2025",
         location: "Ankara, Turkey",
         highlights: [
-          "Worked on network device management app across a stack of Django, React, Kafka, Redis, and Docker",
+          "Worked on network device management app using Django, React, Kafka, Redis, PostgreSQL, and Docker",
           "Built an event-driven email notification system with Kafka and Django for real-time task status alerts",
+          "Developed parsers for vendor APIs to extract and store structured network device data across thousands of entries",
           "Led migration of a project to a new internal library, enabling code reuse and reducing development time",
-          "Reduced Django app container build time by 37% by proposing and adopting UV package manager",
+          "Modeled new database schemas and implemented corresponding frontend views to meet client requirements",
         ],
       },
       {
@@ -36,13 +40,13 @@ const experienceData = [
     positions: [
       {
         name: "Software Engineer Intern",
-        highlights: [
-          "Reduced a 10-minute manual workflow to a single click by building a Python GUI app",
-          "Eliminated manual data entry from Excel file using Robotic Process Automation",
-          "Identified and resolved excessive database calls in legacy code with a bulk query, achieving 97% faster runtime",
-        ],
         duration: "Jul 2023 - Aug 2023",
         location: "Ankara, Turkey",
+        highlights: [
+          "Reduced a 10-minute manual workflow to a single click by building a Python GUI app",
+          "Automated manual data entry from Excel files using Robotic Process Automation",
+          "Eliminated N+1 database bottleneck in legacy code, driving a 36x runtime improvement (3 min → 5 sec)",
+        ],
       },
     ],
   },
@@ -50,66 +54,59 @@ const experienceData = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-32">
-      <Section>
-        <div className="flex items-center justify-center gap-4 mx-auto">
-          <BriefcaseBusiness className="w-10 h-10" />
-          <h2 className="font-bold text-2xl lg:text-4xl">Experience</h2>
-        </div>
-        <div className="mt-16 flex flex-col gap-16">
-          {experienceData.map((exp, index) => (
-            <ExperienceCard
-              key={index}
-              company={exp.company}
-              href={exp.href}
-              positions={exp.positions}
-            />
-          ))}
-        </div>
-      </Section>
-    </section>
+    <Section id="experience">
+      <SectionHeading icon={bagIcon} title="Experience" />
+
+      <div className="mt-10 flex flex-col gap-12">
+        {experienceData.map((exp, index) => (
+          <motion.div
+            key={exp.company}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.55, ease, delay: index * 0.06 }}
+            className="grid gap-5 lg:grid-cols-[13rem_1fr] lg:gap-10"
+          >
+            <div className="lg:pt-1">
+              <Link href={exp.href} target="_blank" rel="noopener noreferrer">
+                <h3 className="text-xl font-semibold tracking-tight transition-colors hover:text-primary">
+                  {exp.company}
+                </h3>
+              </Link>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              {exp.positions.map((pos) => (
+                <div
+                  key={pos.name + pos.duration}
+                  className="glass glass-hover rounded-2xl p-5 sm:p-6"
+                >
+                  <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+                    <p className="font-semibold">{pos.name}</p>
+                    <div className="shrink-0 sm:text-right">
+                      <span className="meta">{pos.duration}</span>
+                      <span className="meta block sm:mt-0.5">
+                        {pos.location}
+                      </span>
+                    </div>
+                  </div>
+                  <ul className="mt-4 flex flex-col gap-2">
+                    {pos.highlights.map((hi) => (
+                      <li
+                        key={hi}
+                        className="relative pl-5 text-sm leading-relaxed text-muted-foreground"
+                      >
+                        <span className="absolute left-0 top-[0.6em] size-1.5 rounded-[2px] bg-primary" />
+                        {hi}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </Section>
   );
 }
-
-const ExperienceCard = ({
-  company,
-  href,
-  positions,
-}: {
-  company: string;
-  href: string;
-  positions: {
-    name: string;
-    duration: string;
-    location: string;
-    highlights: string[];
-  }[];
-}) => (
-  <div>
-    <Link href={href} target="_blank">
-      <h3 className="inline text-xl lg:text-2xl font-semibold text-primary underline hover:no-underline transition">
-        {company}
-      </h3>
-    </Link>
-    <div className="mt-4 flex flex-col gap-8">
-      {positions.map((position, index) => (
-        <div key={index} className="flex flex-col gap-2 lg:gap-0">
-          <div className="flex flex-col lg:flex-row lg:justify-between gap-2">
-            <p className="font-semibold">{position.name}</p>
-            <div className="lg:text-right whitespace-nowrap">
-              <p>{position.duration}</p>
-              <p className="text-sm text-muted-foreground">
-                {position.location}
-              </p>
-            </div>
-          </div>
-          <ul className="pl-4 list-disc text-muted-foreground text-sm space-y-1 lg:w-3/4">
-            {position.highlights.map((hi, i) => (
-              <li key={i}>{hi}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
-  </div>
-);

@@ -1,9 +1,11 @@
 "use client";
 
-import Section from "@/components/section";
-import { Code2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Section, { SectionHeading } from "@/components/section";
+import stackIcon from "@iconify-icons/basil/stack-outline";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { motion, useReducedMotion } from "motion/react";
 
 const categories = [
   {
@@ -12,19 +14,26 @@ const categories = [
   },
   {
     name: "AI",
-    skills: ["LangChain", "PyTorch", "Scikit-Learn", "Numpy", "Pandas"],
+    skills: [
+      "LangChain",
+      "PyTorch",
+      "Scikit-Learn",
+      "Numpy",
+      "Pandas",
+      "Weights & Biases",
+    ],
   },
-  // {
-    // name: "Robotics",
-    // skills: ["ROS2"],
-  // },
+  {
+    name: "Robotics",
+    skills: ["ROS2", "LeRobot", "MuJoCo"],
+  },
   {
     name: "Backend",
     skills: ["Django", "FastAPI", "Firebase", "Kafka"],
   },
   {
     name: "Frontend",
-    skills: ["Next.js", "React", "Tailwind", "Shadcn", "HTML", "CSS"],
+    skills: ["Next.js", "React", "Three.js", "Tailwind", "Shadcn", "HTML", "CSS"],
   },
   {
     name: "Database",
@@ -37,50 +46,78 @@ const categories = [
 ];
 
 export default function Skills() {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const filteredSkills = selectedCategory
-    ? categories.find((category) => category.name === selectedCategory)?.skills
-    : categories.flatMap((category) => category.skills);
+  const [selected, setSelected] = useState<string | null>(null);
+  const reduce = useReducedMotion();
+
+  const filtered = selected
+    ? (categories.find((c) => c.name === selected)?.skills ?? [])
+    : categories.flatMap((c) => c.skills);
 
   return (
-    <section id="skills" className="py-32">
-      <Section>
-        <div className="flex items-center justify-center gap-4 mx-auto">
-          <Code2 className="w-10 h-10" />
-          <h2 className="font-bold text-2xl lg:text-4xl">Skills</h2>
-        </div>
-        <div className="mt-16 flex flex-col gap-12">
-          <div className="flex flex-wrap gap-4">
-            <Button
-              variant={`${!selectedCategory ? "default" : "outline"}`}
-              onClick={() => setSelectedCategory(null)}
-            >
-              All
-            </Button>
-            {categories.map((category) => (
-              <Button
-                key={category.name}
-                variant={`${
-                  selectedCategory === category.name ? "default" : "outline"
-                }`}
-                onClick={() => setSelectedCategory(category.name)}
-              >
-                {category.name}
-              </Button>
-            ))}
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {filteredSkills?.map((skill, index) => (
-              <div
-                key={index}
-                className="border border-primary bg-transparent rounded-lg py-2 text-center hover:bg-input dark:hover:border-input transition text-muted-foreground text-sm"
-              >
-                {skill}
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-    </section>
+    <Section id="skills">
+      <SectionHeading icon={stackIcon} title="Skills" />
+
+      <div className="mt-8 flex flex-wrap gap-2">
+        <FilterPill
+          active={!selected}
+          onClick={() => setSelected(null)}
+          label="All"
+        />
+        {categories.map((c) => (
+          <FilterPill
+            key={c.name}
+            active={selected === c.name}
+            onClick={() => setSelected(c.name)}
+            label={c.name}
+          />
+        ))}
+      </div>
+
+      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        {filtered.map((skill, i) => (
+          <motion.div
+            key={`${selected ?? "all"}-${skill}`}
+            initial={reduce ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 0.4,
+              delay: Math.min(i * 0.03, 0.3),
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            className="glass glass-hover rounded-xl px-3 py-3 text-center font-mono text-sm text-foreground/85"
+          >
+            {skill}
+          </motion.div>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function FilterPill({
+  active,
+  onClick,
+  label,
+}: {
+  active: boolean;
+  onClick: () => void;
+  label: string;
+}) {
+  return (
+    <Button
+      type="button"
+      variant="ghost"
+      size="sm"
+      onClick={onClick}
+      aria-pressed={active}
+      className={cn(
+        "rounded-full px-4",
+        active
+          ? "border border-transparent bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground dark:hover:bg-primary"
+          : "glass text-muted-foreground hover:text-foreground",
+      )}
+    >
+      {label}
+    </Button>
   );
 }
