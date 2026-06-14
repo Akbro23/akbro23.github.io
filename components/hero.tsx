@@ -15,7 +15,7 @@ export default function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease }}
+          transition={{ duration: 0.7, ease, delay: 0.35 }}
           className="text-6xl font-bold leading-[0.9] tracking-tight md:text-7xl xl:text-8xl"
         >
           Akbar
@@ -26,7 +26,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease, delay: 0.2 }}
+          transition={{ duration: 0.7, ease, delay: 0.9 }}
           className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground md:text-xl"
         >
           I build software across AI, robotics, and the full stack. Currently
@@ -36,7 +36,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease, delay: 0.32 }}
+          transition={{ duration: 0.7, ease, delay: 1.45 }}
           className="mt-9 w-full max-w-sm"
         >
           <SocialLinks />
@@ -47,7 +47,7 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease, delay: 0.14 }}
+        transition={{ duration: 0.7, ease, delay: 1.9 }}
         className="order-1 flex justify-center lg:order-2 lg:justify-end"
       >
         <HeroRobot />
