@@ -1,2 +1,8 @@
 overrides:
   postcss: '>=8.5.10'
+
+# Allow these dependencies to run their (native) install scripts. Without this,
+# pnpm blocks them and CI fails with ERR_PNPM_IGNORED_BUILDS.
+onlyBuiltDependencies:
+  - sharp
+  - unrs-resolver
