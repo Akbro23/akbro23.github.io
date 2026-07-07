@@ -13,6 +13,8 @@
     "@iconify-icons/basil": "^1.2.0",
     "@iconify/react": "^6.0.2",
     "@radix-ui/react-slot": "^1.2.5",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "motion": "^12.40.0",
@@ -21,13 +23,15 @@
     "radix-ui": "^1.5.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "tailwind-merge": "^3.6.0"
+    "tailwind-merge": "^3.6.0",
+    "three": "^0.182.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.1",
     "@types/node": "^20.19.43",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
+    "@types/three": "^0.182.0",
     "eslint": "^9.39.4",
     "eslint-config-next": "16.0.1",
     "tailwindcss": "^4.3.1",

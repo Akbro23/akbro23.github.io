@@ -11,10 +11,10 @@ import { cn } from "@/lib/utils";
 
 const links = [
   { href: "#about", name: "About" },
-  { href: "#projects", name: "Projects" },
-  { href: "#skills", name: "Skills" },
+  { href: "#projects", name: "Work" },
   { href: "#education", name: "Education" },
   { href: "#experience", name: "Experience" },
+  { href: "#contact", name: "Contact" },
 ];
 
 export default function NavBar() {

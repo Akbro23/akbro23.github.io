@@ -2,7 +2,7 @@ import Section, { SectionHeading } from "@/components/section";
 import Link from "next/link";
 import lightningIcon from "@iconify-icons/basil/lightning-outline";
 import * as motion from "motion/react-client";
-import AboutGraphic from "@/components/about-graphic";
+import AboutVisual from "@/components/about-visual";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -16,12 +16,12 @@ export default function About() {
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6, ease }}
+        viewport={{ once: true, margin: "0px 0px -20% 0px" }}
+        transition={{ duration: 0.85, ease }}
         className="glass mt-8 rounded-2xl p-6 sm:p-10"
       >
-        <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-12">
-          <div className="max-w-[60ch] space-y-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
+        <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-12">
+        <div className="max-w-[62ch] space-y-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
           <p>
             I&apos;m a Master&apos;s student in Computer Science at{" "}
             <Link href="https://www.kit.edu/" target="_blank" className={linkClass}>
@@ -33,11 +33,7 @@ export default function About() {
               Middle East Technical University
             </Link>{" "}
             in Turkey, with an exchange semester at the{" "}
-            <Link
-              href="https://www.ualberta.ca/"
-              target="_blank"
-              className={linkClass}
-            >
+            <Link href="https://www.ualberta.ca/" target="_blank" className={linkClass}>
               University of Alberta
             </Link>{" "}
             in Canada.
@@ -56,14 +52,13 @@ export default function About() {
             >
               Beko
             </Link>
-            , where I built a Python tool that replaced a tedious manual
+            , where I built a Python tool that replaced a boring manual
             workflow.
           </p>
-          </div>
+        </div>
 
-          <div className="hidden lg:flex lg:justify-center lg:pl-4">
-            <AboutGraphic />
-          </div>
+          {/* A* path-planning visual */}
+          <AboutVisual />
         </div>
       </motion.div>
     </Section>

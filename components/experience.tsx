@@ -63,8 +63,8 @@ export default function Experience() {
             key={exp.company}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.55, ease, delay: index * 0.06 }}
+            viewport={{ once: true, margin: "0px 0px -20% 0px" }}
+            transition={{ duration: 0.8, ease, delay: index * 0.08 }}
             className="grid gap-5 lg:grid-cols-[13rem_1fr] lg:gap-10"
           >
             <div className="lg:pt-1">
