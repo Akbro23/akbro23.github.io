@@ -1,98 +1,56 @@
-import Section, { SectionHeading } from "@/components/section";
-import universityIcon from "@iconify-icons/basil/university-outline";
 import Link from "next/link";
-import * as motion from "motion/react-client";
-
-const ease = [0.16, 1, 0.3, 1] as const;
 
 const educationData = [
   {
     name: "Karlsruhe Institute of Technology",
+    short: "KIT",
     href: "https://www.kit.edu/",
     degree: "MSc Computer Science",
-    highlights: [],
-    duration: "Oct 2025 - Sep 2027",
-    location: "Karlsruhe, Germany",
+    duration: "2025 - 2027",
   },
   {
     name: "Middle East Technical University",
+    short: "METU",
     href: "https://www.metu.edu.tr/",
     degree: "BSc Computer Engineering",
-    highlights: ["GPA: 3.62 / 4.00", "100% merit-based scholarship"],
-    duration: "Sep 2021 - Jun 2025",
-    location: "Ankara, Turkey",
+    duration: "2021 - 2025",
   },
   {
     name: "University of Alberta",
+    short: "UAlberta",
     href: "https://www.ualberta.ca/",
-    degree: "Exchange Program",
-    highlights: ["GPA: 3.7 / 4.0"],
-    duration: "Sep 2023 - Dec 2023",
-    location: "Edmonton, Canada",
+    degree: "Exchange semester",
+    duration: "2023",
   },
 ];
 
+// One line per school. The full name is the link on wider screens and the
+// abbreviation takes over on narrow ones, so every entry stays on a single row.
 export default function Education() {
   return (
-    <Section id="education">
-      <SectionHeading icon={universityIcon} title="Education" />
-
-      <div className="relative mt-10">
-        {/* Timeline rail */}
-        <div className="absolute bottom-3 left-[8px] top-3 w-px bg-border" />
-
-        <div className="flex flex-col gap-5">
-          {educationData.map((edu, index) => (
-            <motion.div
-              key={edu.name}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "0px 0px -20% 0px" }}
-              transition={{ duration: 0.8, ease, delay: index * 0.1 }}
-              className="relative pl-9 sm:pl-12"
-            >
-              {/* Node */}
-              <span
-                className={
-                  "absolute left-0 top-6 size-[17px] rounded-full border-2 " +
-                  (index === 0
-                    ? "border-primary bg-primary"
-                    : "border-primary bg-background-dark")
-                }
-              />
-
-              <div className="glass glass-hover rounded-2xl p-5 sm:p-6">
-                <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
-                  <div>
-                    <Link href={edu.href} target="_blank" rel="noopener noreferrer">
-                      <h3 className="text-lg font-semibold tracking-tight transition-colors hover:text-primary sm:text-xl">
-                        {edu.name}
-                      </h3>
-                    </Link>
-                    <p className="mt-1 text-muted-foreground">{edu.degree}</p>
-                  </div>
-                  <div className="shrink-0 sm:text-right">
-                    <p className="meta">{edu.duration}</p>
-                    <p className="meta mt-0.5">{edu.location}</p>
-                  </div>
-                </div>
-                {edu.highlights.length > 0 && (
-                  <ul className="mt-3 flex flex-wrap gap-2">
-                    {edu.highlights.map((hi) => (
-                      <li
-                        key={hi}
-                        className="rounded-md border border-border bg-background-light/50 px-2.5 py-1 font-mono text-xs text-muted-foreground"
-                      >
-                        {hi}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </Section>
+    <section id="education" aria-label="Education" className="w-full">
+      <ul className="glass divide-y divide-border rounded-2xl text-left">
+        {educationData.map((edu) => (
+          <li
+            key={edu.name}
+            className="flex items-baseline justify-between gap-4 px-4 py-2 sm:px-5"
+          >
+            <span className="min-w-0">
+              <Link
+                href={edu.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold transition-colors hover:text-primary"
+              >
+                <span className="sm:hidden">{edu.short}</span>
+                <span className="hidden sm:inline">{edu.name}</span>
+              </Link>
+              <span className="meta ml-2">{edu.degree}</span>
+            </span>
+            <span className="meta shrink-0">{edu.duration}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
