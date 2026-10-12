@@ -40,15 +40,6 @@ const socials = [
       <Image src="/linkedin-logo.png" alt="" fill className="object-contain" />
     ),
   },
-  // Telegram hidden for now (less relevant for this audience).
-  // {
-  //   label: "Telegram",
-  //   href: "https://t.me/AkbarT23",
-  //   external: true,
-  //   icon: (
-  //     <Image src="/telegram-logo.svg" alt="" fill className="object-contain" />
-  //   ),
-  // },
   {
     label: "Email",
     href: "mailto:atokochev@gmail.com",
