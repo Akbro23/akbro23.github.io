@@ -38,8 +38,8 @@ export default function Home() {
           transition={{ duration: 0.9, ease, delay: 0.45 }}
           className="max-w-[56ch] leading-relaxed text-muted-foreground"
         >
-          Full-stack engineering background, now focused on AI and robotics,
-          from intelligent robot behavior to efficient computing systems
+          MSc Computer Science at KIT, with experience in full-stack, AI, and
+          robotics.
         </motion.p>
 
         <motion.div

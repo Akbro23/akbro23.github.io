@@ -15,16 +15,7 @@ export default function TechBackground() {
     >
       <div className="absolute inset-0 -translate-y-[12vh]">
         <Strands
-          colors={[
-            "#ff3b5c",
-            "#ff7a2f",
-            "#ffe14a",
-            "#3ee38f",
-            "#38e0d8",
-            "#3aa0ff",
-            "#9a6bff",
-            "#ff49c8",
-          ]}
+          colors={["#5ce1ff", "#3d7cff", "#c084fc", "#ff6b8a", "#ffc14a"]}
           count={3}
           speed={reduce ? 0.001 : 0.5}
           amplitude={1}
