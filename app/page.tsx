@@ -1,4 +1,6 @@
-import TechBackground from "@/components/tech-background";
+// Background options: TechBackground (grid + Strands) or KalpakBackground (dot ornament).
+// import TechBackground from "@/components/tech-background";
+import KalpakBackground from "@/components/kalpak-background";
 import RobotCore from "@/components/robot-core";
 import Education from "@/components/education";
 import SocialLinks from "@/components/social-links";
@@ -12,7 +14,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 export default function Home() {
   return (
     <>
-      <TechBackground />
+      <KalpakBackground />
       <main className="relative mx-auto flex min-h-dvh w-full max-w-xl flex-col items-center justify-center gap-4 px-4 pb-8 pt-14 text-center sm:gap-5 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -36,7 +38,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease, delay: 0.45 }}
-          className="max-w-[56ch] leading-relaxed text-muted-foreground"
+          className="max-w-[56ch] text-balance leading-relaxed text-muted-foreground"
         >
           MSc Computer Science at KIT, with experience in full-stack, AI, and
           robotics.
